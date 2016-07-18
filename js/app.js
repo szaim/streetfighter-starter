@@ -35,8 +35,12 @@ $(document).ready(function() {
         $('#hadouken-sound')[0].volume = 0.5;
         $('#hadouken-sound')[0].load();
         $('#hadouken-sound')[0].play();
-    };
+    };  
 
+    $('.instructions').show('slow');
+	setTimeout(function(){
+		$('.instructions').hide('slow');
+	}, 2000);
 });
 
 $(document).keydown(function(e) {
@@ -58,4 +62,5 @@ $(document).keyup(function(c) {
         $('.ryu-ready').hide();
         // alert(2);
     }
-})
+});
+

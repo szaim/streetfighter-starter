@@ -1,5 +1,7 @@
 body {
   background-color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
 }
 
 .main {
@@ -40,7 +42,7 @@ body {
 	height: 494px;
 }
 
-.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool {
+.ryu-ready, .ryu-still, .ryu-throwing, .ryu-cool, .hulk-ryu {
 	width : 659px;
 	height: 494px;
 }
@@ -67,11 +69,12 @@ body {
 
 }
 
-/*.hulk-ryu {
+.hulk-ryu {
   background-image: url('../images/ryu-standing-still.png');
   -webkit-filter: sepia(1);
   filter: sepia(1);
-}*/
+
+}
 
 .hadouken {
   background-image: url('../images/hadouken.gif');
@@ -85,6 +88,6 @@ body {
   left: 423px;
 }
 
-* {
-	outline : red 1px solid;
-}
+// * {
+// 	outline : red 1px solid;
+// }
