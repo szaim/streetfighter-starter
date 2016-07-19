@@ -1,4 +1,36 @@
 $(document).ready(function() {
+
+	// $('.'+person+'-throwing').hide();
+    $('.copy').mouseenter(function(event) {
+            $('.hulk-throwing').hide();
+            $('.hulk-still').hide();
+            $('.hulk-ready').show();
+            $('.hulk-cool').hide();
+        }).mouseleave(function(event) {
+            $('.hulk-still').show();
+            $('.hulk-ready').hide();
+            $('.hulk-cool').hide();
+            $('.hulk-throwing').hide();
+        }).mousedown(function(event) {
+            playhadouken();
+            $('.hulk-cool').hide();
+            $('.hulk-still').hide();
+            $('.hulk-ready').hide();
+            $('.hulk-throwing').show();
+            $('.hulk-hadouken').finish().show().animate({ 'left': '-423px' },
+                500,
+                function() {
+                    $(this).hide();
+                    $(this).css('left', '820px');
+                });
+        })
+        .mouseup(function(event) {
+            $('.hulk-cool').hide();
+            $('.hulk-still').hide();
+            $('.hulk-throwing').hide();
+            $('.hulk-ready').show();
+        });
+
     $('.ryu').mouseenter(function(event) {
             $('.ryu-throwing').hide();
             $('.ryu-still').hide();
@@ -35,12 +67,17 @@ $(document).ready(function() {
         $('#hadouken-sound')[0].volume = 0.5;
         $('#hadouken-sound')[0].load();
         $('#hadouken-sound')[0].play();
-    };  
+    };
 
     $('.instructions').show('slow');
 	setTimeout(function(){
 		$('.instructions').hide('slow');
 	}, 2000);
+
+    $('.title').fadeIn(3000, function(){
+        $('.title').css('font-size', '5em');
+        $('.title').fadeOut(3000);
+    });
 });
 
 $(document).keydown(function(e) {
@@ -51,6 +88,11 @@ $(document).keydown(function(e) {
         $('.ryu-ready').hide();
         $('.ryu-throwing').hide();
         // alert(1);
+    } else if(e.keyCode == 86) {
+        $('.hulk-cool').show();
+        $('.hulk-still').hide();
+        $('.hulk-ready').hide();
+        $('.hulk-throwing').hide();
     }
 });
 $(document).keyup(function(c) {
@@ -61,6 +103,10 @@ $(document).keyup(function(c) {
         $('.ryu-throwing').hide();
         $('.ryu-ready').hide();
         // alert(2);
+    } else if(c.keyCode == 86) {
+        $('.hulk-cool').show();
+        $('.hulk-still').hide();
+        $('.hulk-ready').hide();
+        $('.hulk-throwing').hide();
     }
 });
-
