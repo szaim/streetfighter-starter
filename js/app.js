@@ -104,8 +104,8 @@ $(document).keyup(function(c) {
         $('.ryu-ready').hide();
         // alert(2);
     } else if(c.keyCode == 86) {
-        $('.hulk-cool').show();
-        $('.hulk-still').hide();
+        $('.hulk-cool').hide();
+        $('.hulk-still').show();
         $('.hulk-ready').hide();
         $('.hulk-throwing').hide();
     }
